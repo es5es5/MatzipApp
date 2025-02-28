@@ -1,23 +1,23 @@
-import React from 'react'
-import {
-  Button,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native'
+import React, {useState} from 'react'
+import {SafeAreaView, StyleSheet, Text, TextInput, View} from 'react-native'
 
 function App() {
+  const [name, setName] = useState('')
+
+  const handleChangeInput = (text: string) => {
+    console.log(text)
+    setName(text)
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inputContainer}>
-        <TextInput style={styles.input} />
-        <Text>Hello World</Text>
-      </View>
-      <View style={styles.inputContainer}>
-        <TextInput style={styles.input} />
-        <Text>Hello World</Text>
+        <Text>이름</Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={handleChangeInput}
+          value={name}
+        />
       </View>
     </SafeAreaView>
   )
@@ -25,20 +25,16 @@ function App() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'yellow',
     flex: 1,
   },
   input: {
     flex: 1,
     borderWidth: 2,
-    borderColor: 'black',
-    height: 100,
+    height: 50,
     width: 100,
   },
-
   inputContainer: {
     flex: 1,
-    backgroundColor: 'red',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-evenly',
