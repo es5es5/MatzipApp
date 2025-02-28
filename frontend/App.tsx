@@ -1,17 +1,23 @@
 import React from 'react'
-import {Button, SafeAreaView, StyleSheet, Text, View} from 'react-native'
+import {
+  Button,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native'
 
 function App() {
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.inputContainer}>
+        <TextInput style={styles.input} />
         <Text>Hello World</Text>
-        <Button
-          title="버튼"
-          onPress={() => {
-            console.log('Hi')
-          }}
-        />
+      </View>
+      <View style={styles.inputContainer}>
+        <TextInput style={styles.input} />
+        <Text>Hello World</Text>
       </View>
     </SafeAreaView>
   )
@@ -19,9 +25,23 @@ function App() {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'yellow',
+    flex: 1,
+  },
+  input: {
+    flex: 1,
+    borderWidth: 2,
+    borderColor: 'black',
+    height: 100,
+    width: 100,
+  },
+
+  inputContainer: {
+    flex: 1,
     backgroundColor: 'red',
-    marginHorizontal: 10,
-    marginVertical: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
   },
 })
 
