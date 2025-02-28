@@ -1,4 +1,10 @@
 module.exports = {
   root: true,
-  extends: '@react-native',
-};
+  extends: [
+    'eslint:recommended',
+    'react-app',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    '@react-native',
+  ],
+}
